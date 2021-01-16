@@ -1,0 +1,65 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"labels":{"name":"helm-operator"},"name":"helm-operator","namespace":"flux"}}
+    creationTimestamp: "2021-01-16T13:17:50Z"
+    labels:
+      name: helm-operator
+    name: helm-operator
+    namespace: flux
+    resourceVersion: "17082456"
+    selfLink: /api/v1/namespaces/flux/serviceaccounts/helm-operator
+    uid: 95fcd84b-1acd-4423-bc6c-f667a867bb90
+  secrets:
+  - name: helm-operator-token-qjsqh
+- apiVersion: rbac.authorization.k8s.io/v1beta1
+  kind: ClusterRole
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"rbac.authorization.k8s.io/v1beta1","kind":"ClusterRole","metadata":{"annotations":{},"labels":{"name":"helm-operator"},"name":"helm-operator"},"rules":[{"apiGroups":["*"],"resources":["*"],"verbs":["*"]},{"nonResourceURLs":["*"],"verbs":["*"]}]}
+    creationTimestamp: "2021-01-16T13:17:50Z"
+    labels:
+      name: helm-operator
+    name: helm-operator
+    resourceVersion: "17082454"
+    selfLink: /apis/rbac.authorization.k8s.io/v1beta1/clusterroles/helm-operator
+    uid: f28a576d-2f4f-4934-990c-ee7f4351db6d
+  rules:
+  - apiGroups:
+    - '*'
+    resources:
+    - '*'
+    verbs:
+    - '*'
+  - nonResourceURLs:
+    - '*'
+    verbs:
+    - '*'
+- apiVersion: rbac.authorization.k8s.io/v1beta1
+  kind: ClusterRoleBinding
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"rbac.authorization.k8s.io/v1beta1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"labels":{"name":"helm-operator"},"name":"helm-operator"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"helm-operator"},"subjects":[{"kind":"ServiceAccount","name":"helm-operator","namespace":"flux"}]}
+    creationTimestamp: "2021-01-16T13:17:50Z"
+    labels:
+      name: helm-operator
+    name: helm-operator
+    resourceVersion: "17082457"
+    selfLink: /apis/rbac.authorization.k8s.io/v1beta1/clusterrolebindings/helm-operator
+    uid: faaa0c65-d640-4970-a254-01d7e14e308b
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: helm-operator
+  subjects:
+  - kind: ServiceAccount
+    name: helm-operator
+    namespace: flux
+kind: List
+metadata: {}
