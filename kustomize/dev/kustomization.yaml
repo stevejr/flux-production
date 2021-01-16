@@ -2,7 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - cluster
-- helm-operators
+- flux
+# - helm-operators
 - cert-manager
 # Patch all helm release with to `spec.helmVersion: v3`
 patches:

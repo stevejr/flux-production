@@ -3,6 +3,9 @@ kind: Kustomization
 resources:
   - ../../base/cert-manager
 
+patchesStrategicMerge:
+  - cert-manager-values.yaml
+
 configMapGenerator:
 - name: service-properties
   namespace: default
