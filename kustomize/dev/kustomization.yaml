@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - cluster
 - flux
+- helm-operator
 - helm-operators
 - cert-manager
 # Patch all helm release with to `spec.helmVersion: v3`
