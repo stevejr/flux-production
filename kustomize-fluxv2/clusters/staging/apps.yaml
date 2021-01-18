@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps/staging
+  path: ./kustomize-fluxv2/apps/staging
   prune: true
   validation: client
 
